@@ -1,0 +1,19 @@
+{
+  "name": "vl-ui-form-message",
+  "version": "0.0.0",
+  "description": "Use a form message to add labels, annotations or error messages to your forms.",
+  "main": "vl-ui-form-message.js",
+  "scripts": {
+    "test": " wct -l chrome,firefox --npm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-form-message.git"
+  },
+  "author": "DIDM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milieuinfo/webcomponent-vl-ui-form-message/issues"
+  },
+  "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-form-message#readme"
+}
