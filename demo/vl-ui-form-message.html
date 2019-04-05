@@ -1,0 +1,61 @@
+<html lang="nl">
+  <head>
+    <title>vl-ui-form-message voorbeeld</title>
+  </head>
+
+  <script type="module" src="../vl-form-message.js"></script>
+
+  <style>
+    body {
+      padding: 2.5em !important;
+      max-width: 900px !important;
+      margin:auto !important;
+    }
+
+    label {
+      border: 1px dotted lightgray !important;
+    }
+
+    h1 {
+      font-size: x-large !important;
+    }
+
+    h2 {
+      font-size: large !important;
+      margin-top: 20px !important;
+    }
+  </style>
+
+  <body>
+    <h1>vl-ui-form-message demo</h1>
+
+    <p>De border rondom de messages is enkel om de grootte van het label element te tonen</p>
+
+    <h2>Webuniversum form message: </h2>
+
+    <p>Dit is een voorbeeld van een "vl-ui-form-message" component van het Webuniversum.</p>
+
+    <span id="demo-wu"></span>
+    <label class="vl-form__label" for="demo-wu">foobar</label>
+
+    <p>
+      <a href="https://overheid.vlaanderen.be/webuniversum/v3/documentation/forms/vl-ui-form-message/">
+        Meer voorbeelden en documentatie</a>.
+    </p>
+
+    <h2>Web Component form message:</h2>
+
+    <p>Form label</p>
+    <span id="demo-label"></span>
+    <label is="vl-form-message" for="demo-label">foobar</label>
+
+    <p>Form label (light)</p>
+    <span id="demo-label-light"></span>
+    <label is="vl-form-message" for="demo-label-light" light>foobar</label>
+
+    <p>Form label (block)</p>
+    <span id="demo-label-block"></span>
+    <label is="vl-form-message" for="demo-label-block" block>foobar</label>
+
+  </body>
+</html>
