@@ -19,6 +19,9 @@ export class VlFormMessage extends NativeVlElement(HTMLLabelElement) {
     return 'vl-form__label--';
   }
   
+  get _stylePath() {
+    return '../style.css';
+  }
 }
 
 customElements.define('vl-form-message', VlFormMessage, {extends: 'label'});
