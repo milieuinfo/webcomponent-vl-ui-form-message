@@ -1,9 +1,14 @@
 import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
- * vl-ui-form-message
- *
- * @demo demo/vl-ui-form-message.html
+ * VlFormMessage
+ * @class
+ * @classdesc Gebruik de vl-form-message om labels toe te voegen aan een formulier.. <a href="demo/vl-form-message.html">Demo</a>.
+ * 
+ * @extends VlElement
+ * 
+ * @property {boolean} light - Attribuut wordt gebruikt om het label in een lichte kleur te tonen.
+ * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
  */
 export class VlFormMessage extends NativeVlElement(HTMLLabelElement) {
 
