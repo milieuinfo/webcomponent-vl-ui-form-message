@@ -3,7 +3,7 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
 /**
  * VlFormLabel
  * @class
- * @classdesc Gebruik de vl-form-message om labels toe te voegen aan een formulier. <a href="demo/vl-form-message.html">Demo</a>.
+ * @classdesc Gebruik de vl-form-label om labels toe te voegen aan een formulier. <a href="demo/vl-form-label.html">Demo</a>.
  * 
  * @extends VlElement
  * 
