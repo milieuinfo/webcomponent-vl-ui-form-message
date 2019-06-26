@@ -1,4 +1,4 @@
-import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.src.js';
 
 /**
  * VlFormLabel
@@ -29,4 +29,42 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
   }
 }
 
-customElements.define('vl-form-label', VlFormLabel, {extends: 'label'});
+export class VlFormValidation extends NativeVlElement(HTMLParagraphElement) {
+
+  static get _observedClassAttributes() {
+    return ['block'];
+  }
+
+  get _type() {
+    if (this.hasAttribute("success")) {
+      return "success"
+    }
+    return "error";
+  }
+
+  connectedCallback() {
+    this.classList.add(`vl-form__${this._type}`);
+    this._addCheckIfSuccess();
+  }
+
+  _getCheckTemplate() {
+    return this._template('<span class="vl-vi vl-vi-check" aria-hidden="true"></span>');
+  }
+
+  _addCheckIfSuccess() {
+    if (this._type === 'success') {
+      this._element.append(this._getCheckTemplate());
+    }
+  }
+
+  get _classPrefix() {
+    return `vl-form__${this._type}--`;
+  }
+
+  get _stylePath() {
+    return '../style.css';
+  }
+}
+
+define('vl-form-label', VlFormLabel, {extends: 'label'});
+define('vl-form-validation', VlFormValidation, {extends: 'p'});

@@ -17,15 +17,27 @@
   </template>
 </test-fixture>
 
-<script>
-  suite('<vl-form-message>', () => {
+<test-fixture id="vl-form-validation-error-fixture">
+  <template>
+    <p id="error" is="vl-form-validation" error></p>
+  </template>
+</test-fixture>
 
-    test('heeft de vl-form-message class', () => {
+<test-fixture id="vl-form-validation-success-fixture">
+  <template>
+    <p id="success" is="vl-form-validation" success></p>
+  </template>
+</test-fixture>
+
+<script>
+  suite('vl-form-message', () => {
+
+    test('form label heeft de vl-form__label class', () => {
       const label = fixture('vl-form-label-fixture');
       assert.isTrue(label.classList.contains('vl-form__label'));
     });
 
-    test('krijgt de juiste class wanneer het label een attribuut bevat', () => {
+    test('form label krijgt de juiste class wanneer het label een attribuut bevat', () => {
       const label = fixture('vl-form-label-fixture');
       ['light', 'block'].forEach((attribuut) => {
         assert.isFalse(label.classList.contains('vl-form__label--' + attribuut));
@@ -34,6 +46,48 @@
         label.removeAttribute(attribuut);
         assert.isFalse(label.classList.contains('vl-form__label--' + attribuut));
       });
+    });
+
+    test('form error heeft de vl-form__error class', () => {
+      const error = fixture('vl-form-validation-error-fixture');
+      assert.isTrue(error.classList.contains('vl-form__error'));
+    });
+
+    test('form error krijgt de juiste class wanneer het een attribuut bevat', () => {
+      const error = fixture('vl-form-validation-error-fixture');
+      ['block'].forEach((attribuut) => {
+        assert.isFalse(error.classList.contains('vl-form__error--' + attribuut));
+        error.setAttribute(attribuut, '');
+        assert.isTrue(error.classList.contains('vl-form__error--' + attribuut));
+        error.removeAttribute(attribuut);
+        assert.isFalse(error.classList.contains('vl-form__error--' + attribuut));
+      });
+    });
+
+    test('form success heeft de vl-form__success class', () => {
+      const success = fixture('vl-form-validation-success-fixture');
+      assert.isTrue(success.classList.contains('vl-form__success'));
+    });
+
+    test('form success krijgt de juiste class wanneer het een attribuut bevat', () => {
+      const success = fixture('vl-form-validation-success-fixture');
+      ['block'].forEach((attribuut) => {
+        assert.isFalse(success.classList.contains('vl-form__success--' + attribuut));
+        success.setAttribute(attribuut, '');
+        assert.isTrue(success.classList.contains('vl-form__success--' + attribuut));
+        success.removeAttribute(attribuut);
+        assert.isFalse(success.classList.contains('vl-form__success--' + attribuut));
+      });
+    });
+
+    test('form success heeft een check', () => {
+      const success = fixture('vl-form-validation-success-fixture');
+      assert.isTrue(success.querySelector("span").classList.contains('vl-vi-check'));
+    });
+
+    test('form error heeft geen check', () => {
+      const error = fixture('vl-form-validation-error-fixture');
+      assert.isNull(error.querySelector("span"));
     });
 
   });
