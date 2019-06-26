@@ -14,7 +14,9 @@ npm run demo
 ```
 
 ## Kanttekening
-Niet geïmplementeerd omdat deze niet tot de from message behoren maar gerelateerd zijn aan validatie:
+De "form message" component van Webuniversum werd opgedeeld in 3 componenten:
+* Form label
+* Form validation (success + error)
 * Form annotation
 
 ## Credits

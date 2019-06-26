@@ -3,7 +3,7 @@ import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.src.js
 /**
  * VlFormLabel
  * @class
- * @classdesc Gebruik de vl-form-label om labels toe te voegen aan een formulier. <a href="demo/vl-form-label.html">Demo</a>.
+ * @classdesc Gebruik de vl-form-label om labels toe te voegen aan een formulier. <a href="demo/vl-form-message.html">Demo</a>.
  * 
  * @extends VlElement
  * 
@@ -66,5 +66,25 @@ export class VlFormValidation extends NativeVlElement(HTMLParagraphElement) {
   }
 }
 
+export class VlFormAnnotation extends NativeVlElement(HTMLParagraphElement) {
+
+  static get _observedClassAttributes() {
+    return ['block'];
+  }
+
+  connectedCallback() {
+    this.classList.add('vl-form__annotation');
+  }
+
+  get _classPrefix() {
+    return 'vl-form__annotation--';
+  }
+
+  get _stylePath() {
+    return '../style.css';
+  }
+}
+
 define('vl-form-label', VlFormLabel, {extends: 'label'});
 define('vl-form-validation', VlFormValidation, {extends: 'p'});
+define('vl-form-annotation', VlFormAnnotation, {extends: 'p'});
