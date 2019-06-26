@@ -1,11 +1,11 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.src.js';
+import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 
 /**
  * VlFormLabel
  * @class
  * @classdesc Gebruik de vl-form-label om labels toe te voegen aan een formulier. <a href="demo/vl-form-message.html">Demo</a>.
  * 
- * @extends VlElement
+ * @extends NativeVlElement
  * 
  * @property {boolean} light - Attribuut wordt gebruikt om het label in een lichte kleur te tonen.
  * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
@@ -29,6 +29,18 @@ export class VlFormLabel extends NativeVlElement(HTMLLabelElement) {
   }
 }
 
+
+/**
+ * VlFormValidation
+ * @class
+ * @classdesc Gebruik de vl-form-validation om een validatie boodschap toe te voegen aan een formulier. <a href="demo/vl-form-message.html">Demo</a>.
+ *
+ * @extends NativeVlElement
+ *
+ * @property {boolean} error - Attribuut wordt gebruikt om foutboodschap te tonen bij validatiefouten.
+ * @property {boolean} success - Attribuut wordt gebruikt om boodschap te tonen bij een succesvolle validatie.
+ * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
+ */
 export class VlFormValidation extends NativeVlElement(HTMLParagraphElement) {
 
   static get _observedClassAttributes() {
@@ -66,6 +78,16 @@ export class VlFormValidation extends NativeVlElement(HTMLParagraphElement) {
   }
 }
 
+
+/**
+ * VlFormAnnotation
+ * @class
+ * @classdesc Gebruik de vl-form-annotation om invoerinstructies toe te voegen aan een formulier. <a href="demo/vl-form-message.html">Demo</a>.
+ *
+ * @extends NativeVlElement
+ *
+ * @property {boolean} block - Attribuut wordt gebruikt om het label in block vorm te tonen zodat het de breedte van het parent element aanneemt.
+ */
 export class VlFormAnnotation extends NativeVlElement(HTMLParagraphElement) {
 
   static get _observedClassAttributes() {
