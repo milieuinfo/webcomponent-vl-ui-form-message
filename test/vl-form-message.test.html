@@ -84,12 +84,12 @@
 
     test('form success heeft een check', () => {
       const success = fixture('vl-form-validation-success-fixture');
-      assert.isTrue(success.querySelector("#check").classList.contains('vl-vi-check'));
+      assert.isTrue(success.querySelector("span").classList.contains('vl-vi-check'));
     });
 
     test('form error heeft geen check', () => {
       const error = fixture('vl-form-validation-error-fixture');
-      assert.isNull(error.querySelector("#check"));
+      assert.isNull(error.querySelector("span"));
     });
 
     test('form annotation heeft de vl-form__annotation class', () => {

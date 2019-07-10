@@ -63,11 +63,11 @@ export class VlFormValidation extends NativeVlElement(HTMLParagraphElement) {
   }
 
   get _checkElement() {
-    return this._element.querySelector('#check');
+    return this._element.querySelector('.vl-vi-check');
   }
 
   _getCheckTemplate() {
-    return this._template('<span id="check" class="vl-vi vl-vi-check" aria-hidden="true"></span>');
+    return this._template('<span class="vl-vi vl-vi-check" aria-hidden="true"></span>');
   }
 
   get _classPrefix() {
