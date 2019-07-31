@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-form-message",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Use a form message to add labels, annotations or error messages to your forms.",
   "main": "vl-form-message.js",
   "scripts": {
