@@ -1,6 +1,4 @@
 const { VlElement } = require('vl-ui-core');
-
-
 class VlFormMessage extends VlElement {  
     constructor(driver, selector) {
         super(driver, selector);
