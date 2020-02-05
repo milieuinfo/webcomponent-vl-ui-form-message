@@ -1,6 +1,5 @@
 const VlFormMessage = require('../components/vl-form-message');
-const { Page } = require('vl-ui-core');
-const { Config } = require('vl-ui-core');
+const { Page, Config } = require('vl-ui-core').Test;
 
 class VlFormMessagePage extends Page {
     async _getFormMessage(selector) {
