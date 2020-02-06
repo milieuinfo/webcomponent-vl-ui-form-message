@@ -2,12 +2,25 @@
   "name": "vl-ui-form-message",
   "version": "3.0.0",
   "description": "Use a form message to add labels, annotations or error messages to your forms.",
+  "author": "DIDM",
+  "license": "MIT",
   "main": "./src/index.js",
   "exports": {
     "require": "./index.js",
     "import": "./src/index.js",
     "node": "./index.js",
     "default": "./index.js"
+  },
+  "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-form-message#readme",
+  "bugs": {
+    "url": "https://github.com/milieuinfo/webcomponent-vl-ui-form-message/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-form-message.git"
+  },
+  "publishConfig": {
+    "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   },
   "scripts": {
     "prepare": "npm update --dev vl-ui-util && npm run prepare:util",
@@ -54,18 +67,5 @@
   "devDependencies": {
     "@govflanders/vl-ui-form-message": "3.9.1",
     "vl-ui-util": "^4.0.1"
-  },
-  "publishConfig": {
-    "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-form-message.git"
-  },
-  "author": "DIDM",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/milieuinfo/webcomponent-vl-ui-form-message/issues"
-  },
-  "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-form-message#readme"
+  }
 }
