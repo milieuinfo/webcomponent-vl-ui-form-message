@@ -31,23 +31,23 @@ class VlFormMessagePage extends Page {
     }
 
     async getFormAnnotation() {
-        return this._getFormAnnotation('#form-label-annotation');
+        return this._getFormAnnotation('#form-annotation');
     }
 
     async getFormAnnotationBlock() {
-        return this._getFormAnnotation('#form-label-annotation-block');
+        return this._getFormAnnotation('#form-annotation-block');
     }
 
     async getFormValidationMessageError() {
-        return this._getFormValidationMessage('#form-label-error');
+        return this._getFormValidationMessage('#form-validation-message-error');
     }
 
     async getFormValidationMessageBlockError() {
-        return this._getFormValidationMessage('#form-label-block-error');
+        return this._getFormValidationMessage('#form-validation-message-block-error');
     }
 
     async getFormValidationMessageSuccess() {
-        return this._getFormValidationMessage('#form-label-success');
+        return this._getFormValidationMessage('#form-validation-message-success');
     }
     
     async load() {
