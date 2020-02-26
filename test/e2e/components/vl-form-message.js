@@ -1,9 +1,5 @@
 const { VlElement } = require('vl-ui-core').Test;
 class VlFormMessage extends VlElement {  
-    constructor(driver, selector) {
-        super(driver, selector);
-    }
-
     async isLight() {
         return this.hasAttribute('light');
     }

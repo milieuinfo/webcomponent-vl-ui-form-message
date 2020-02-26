@@ -2,10 +2,6 @@ const VlFormMessage = require('../components/vl-form-message');
 const { Page, Config } = require('vl-ui-core').Test;
 
 class VlFormMessagePage extends Page {
-	constructor(driver) {
-        super(driver);
-    }
-
     async _getFormMessage(selector) {
         return new VlFormMessage(this.driver, selector);
     }
