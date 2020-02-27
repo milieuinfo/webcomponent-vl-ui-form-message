@@ -56,9 +56,4 @@ describe('vl-form-message', async () => {
         await assert.eventually.isFalse(label.isError());
         await assert.eventually.isFalse(label.isBlock());
     });
-
-
-    after(async () => {
-        return driver.quit();
-    });
 });
