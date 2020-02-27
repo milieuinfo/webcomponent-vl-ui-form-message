@@ -12,6 +12,7 @@ describe('vl-form-message', async () => {
         const label = await vlFormMessagePage.getFormLabel();
         await assert.eventually.isFalse(label.isBlock());
         await assert.eventually.isFalse(label.isLight());
+        await assert.eventually.equal(label.getText(), 'foobar');
     });
 
     it('Als gebruiker kan ik een light label zien', async() => {
@@ -29,6 +30,7 @@ describe('vl-form-message', async () => {
     it('Als gebruiker kan ik een form annotation zien', async() => {
         const label = await vlFormMessagePage.getFormAnnotation();
         await assert.eventually.isFalse(label.isBlock());
+        await assert.eventually.equal(label.getText(), 'De naam van het evenement moet minstens 12 karakters tellen.');
     });
 
     it('Als gebruiker kan ik een form annotation block zien', async() => {
@@ -41,6 +43,7 @@ describe('vl-form-message', async () => {
         await assert.eventually.isTrue(label.isError());
         await assert.eventually.isFalse(label.isSuccess());
         await assert.eventually.isFalse(label.isBlock());
+        await assert.eventually.equal(label.getText(), "Het veld 'Naam evenement' is een verplicht veld.");
     });
 
     it('Als gebruiker kan ik een form validation message met een error block zien', async() => {
