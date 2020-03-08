@@ -10,6 +10,10 @@ class VlFormLabel extends VlElement {
         return this.hasAttribute('block');
     }
     
+    async isFor() {
+    	return this.getAttribute("for");
+    }
+    
 }
 
 module.exports = VlFormLabel;
