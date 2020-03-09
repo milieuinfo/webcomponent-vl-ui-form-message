@@ -23,7 +23,7 @@ describe('vl-form-message', async () => {
     });
 
     it('Als gebruiker kan ik het onderscheid zien tussen een gewoon label en een block label', async() => {
-    	const labelNotBlock = await vlFormMessagePage.getFormLabel();
+        const labelNotBlock = await vlFormMessagePage.getFormLabel();
         const labelBlock = await vlFormMessagePage.getFormLabelBlock();
         await assert.eventually.isFalse(labelNotBlock.isBlock());
         await assert.eventually.isTrue(labelBlock.isBlock());
@@ -36,7 +36,7 @@ describe('vl-form-message', async () => {
     });
 
     it('Als gebruiker kan ik het onderscheid zien tussen een gewone form annotation en een block form annotation', async() => {
-    	const annotationNotBlock = await vlFormMessagePage.getFormAnnotation();
+        const annotationNotBlock = await vlFormMessagePage.getFormAnnotation();
         const annotationBlock = await vlFormMessagePage.getFormAnnotationBlock();
         await assert.eventually.isFalse(annotationNotBlock.isBlock());
         await assert.eventually.isTrue(annotationBlock.isBlock());
@@ -49,16 +49,17 @@ describe('vl-form-message', async () => {
     });
 
     it('Als gebruiker kan ik het onderscheid zien tussen een gewone form validation message en een block form validation message', async() => {
-    	const formValidationMessageNotBlock = await vlFormMessagePage.getFormValidationMessageError();
+        const formValidationMessageNotBlock = await vlFormMessagePage.getFormValidationMessageError();
         const formValidationMessageBlock = await vlFormMessagePage.getFormValidationMessageBlockError();
         await assert.eventually.isFalse(formValidationMessageNotBlock.isBlock());
         await assert.eventually.isTrue(formValidationMessageBlock.isBlock());
     });
 
     it('Als gebruiker kan ik het onderscheid zien tussen een gewone form validation message en een success form validation message', async() => {
-    	const formValidationMessageError = await vlFormMessagePage.getFormValidationMessageError();
-    	await assert.eventually.isFalse(formValidationMessageError.isSuccess());
-    	await assert.eventually.isTrue(formValidationMessageError.isError());
+        const formValidationMessageError = await vlFormMessagePage.getFormValidationMessageError();
+        await assert.eventually.isFalse(formValidationMessageError.isSuccess());
+        await assert.eventually.isTrue(formValidationMessageError.isError());
+    	
         const formValidationMessageSuccess = await vlFormMessagePage.getFormValidationMessageSuccess();
         await assert.eventually.isTrue(formValidationMessageSuccess.isSuccess());
         await assert.eventually.isFalse(formValidationMessageSuccess.isError());
