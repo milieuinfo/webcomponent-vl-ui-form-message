@@ -1,6 +1,6 @@
-const {VlElement} = require('vl-ui-core').Test;
+const {VlFormElement} = require('./vl-form-element');
 
-class VlFormAnnotation extends VlElement {
+class VlFormAnnotation extends VlFormElement {
   async isBlock() {
     return this.hasAttribute('block');
   }

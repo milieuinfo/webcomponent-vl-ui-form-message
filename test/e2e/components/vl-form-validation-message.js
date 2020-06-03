@@ -1,6 +1,6 @@
-const {VlElement} = require('vl-ui-core').Test;
+const {VlFormElement} = require('./vl-form-element');
 
-class VlFormValidationMessage extends VlElement {
+class VlFormValidationMessage extends VlFormElement {
   async isError() {
     return this.hasClass('vl-form__error');
   }
@@ -11,6 +11,12 @@ class VlFormValidationMessage extends VlElement {
 
   async isBlock() {
     return this.hasAttribute('block');
+  }
+
+  async text() {
+    const textContents = await this.getText();
+    const regex = new RegExp('\n', 'g');
+    return textContents.replace(regex, '').trim();
   }
 }
 

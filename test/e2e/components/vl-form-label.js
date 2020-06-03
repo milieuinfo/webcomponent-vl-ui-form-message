@@ -1,6 +1,6 @@
-const {VlElement} = require('vl-ui-core').Test;
+const {VlFormElement} = require('./vl-form-element');
 
-class VlFormLabel extends VlElement {
+class VlFormLabel extends VlFormElement {
   async isLight() {
     return this.hasAttribute('light');
   }
@@ -11,6 +11,12 @@ class VlFormLabel extends VlElement {
 
   async isFor() {
     return this.getAttribute('for');
+  }
+
+  async text() {
+    const textContents = await this.getText();
+    const regex = new RegExp('\n', 'g');
+    return textContents.replace(regex, '').trim();
   }
 }
 
