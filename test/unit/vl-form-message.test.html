@@ -37,7 +37,6 @@
 
 <script>
   suite('vl-form-message', () => {
-
     const valideerAttribuut = (element, classPrefix, attribuut) => {
       assert.isFalse(element.classList.contains(classPrefix + attribuut));
       element.setAttribute(attribuut, '');
@@ -84,12 +83,12 @@
 
     test('form success heeft een check', () => {
       const success = fixture('vl-form-validation-message-success-fixture');
-      assert.isTrue(success.querySelector("span").classList.contains('vl-vi-check'));
+      assert.isTrue(success.querySelector('span').classList.contains('vl-vi-check'));
     });
 
     test('form error heeft geen check', () => {
       const error = fixture('vl-form-validation-message-error-fixture');
-      assert.isNull(error.querySelector("span"));
+      assert.isNull(error.querySelector('span'));
     });
 
     test('form annotation heeft de vl-form__annotation class', () => {
@@ -103,7 +102,6 @@
         valideerAttribuut(annotation, 'vl-form__annotation--', attribuut);
       });
     });
-
   });
 </script>
 </body>
