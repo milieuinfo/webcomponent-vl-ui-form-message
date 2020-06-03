@@ -12,7 +12,7 @@ describe('vl-form-message', async () => {
     const label = await vlFormMessagePage.getFormLabel();
     await assert.eventually.isTrue(label.isDisplayed());
     await assert.eventually.equal(label.isFor(), 'demo-label');
-    await assert.eventually.equal(label.getText(), 'foobar');
+    await assert.eventually.equal(label.text(), 'foobar');
   });
 
   it('Als gebruiker kan ik het onderscheid zien tussen een gewoon en een light label', async () => {
@@ -32,27 +32,13 @@ describe('vl-form-message', async () => {
   it('Als gebruiker kan ik een form annotation zien', async () => {
     const annotation = await vlFormMessagePage.getFormAnnotation();
     await assert.eventually.isTrue(annotation.isDisplayed());
-    await assert.eventually.equal(annotation.getText(), 'De naam van het evenement moet minstens 12 karakters tellen.');
-  });
-
-  it('Als gebruiker kan ik het onderscheid zien tussen een gewone form annotation en een block form annotation', async () => {
-    const annotationNotBlock = await vlFormMessagePage.getFormAnnotation();
-    const annotationBlock = await vlFormMessagePage.getFormAnnotationBlock();
-    await assert.eventually.isFalse(annotationNotBlock.isBlock());
-    await assert.eventually.isTrue(annotationBlock.isBlock());
+    await assert.eventually.equal(annotation.text(), 'De naam van het evenement moet minstens 12 karakters tellen.');
   });
 
   it('Als gebruiker kan ik een form validation message met een error zien', async () => {
     const formValidationMessage = await vlFormMessagePage.getFormValidationMessageError();
     await assert.eventually.isTrue(formValidationMessage.isDisplayed());
-    await assert.eventually.equal(formValidationMessage.getText(), 'Het veld \'Naam evenement\' is een verplicht veld.');
-  });
-
-  it('Als gebruiker kan ik het onderscheid zien tussen een gewone form validation message en een block form validation message', async () => {
-    const formValidationMessageNotBlock = await vlFormMessagePage.getFormValidationMessageError();
-    const formValidationMessageBlock = await vlFormMessagePage.getFormValidationMessageBlockError();
-    await assert.eventually.isFalse(formValidationMessageNotBlock.isBlock());
-    await assert.eventually.isTrue(formValidationMessageBlock.isBlock());
+    await assert.eventually.equal(formValidationMessage.text(), 'Het veld \'Naam evenement\' is een verplicht veld.');
   });
 
   it('Als gebruiker kan ik het onderscheid zien tussen een gewone form validation message en een success form validation message', async () => {
