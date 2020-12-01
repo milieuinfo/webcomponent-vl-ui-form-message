@@ -1,10 +1,11 @@
-const {assert, driver} = require('vl-ui-core').Test.Setup;
+const {assert, getDriver} = require('vl-ui-core').Test.Setup;
 const VlFormMessagePage = require('./pages/vl-form-message.page');
 
 describe('vl-form-message', async () => {
-  const vlFormMessagePage = new VlFormMessagePage(driver);
+  let vlFormMessagePage;
 
   before(() => {
+    vlFormMessagePage = new VlFormMessagePage(getDriver());
     return vlFormMessagePage.load();
   });
 
