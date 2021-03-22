@@ -109,13 +109,10 @@
       });
     });
 
-    test('form error heeft  geen hidden attribuut als het data-vl-error-id attribuut niet gezet is', () => {
-      const error = fixture('vl-form-validation-message-error-fixture');
+    test('form error krijgt hidden attribuut als het data-vl-error-id attribuut aanwezig is gezet is', () => {
+      let error = fixture('vl-form-validation-message-error-fixture');
       assert.isFalse(error.hasAttribute('hidden'));
-    });
-
-    test('form error heeft  geen hidden attribuut als het data-vl-error-id attribuut niet gezet is', () => {
-      const error = fixture('vl-form-validation-message-error-met-error-id-attribuut-fixture');
+      error = fixture('vl-form-validation-message-error-met-error-id-attribuut-fixture');
       assert.isTrue(error.hasAttribute('hidden'));
     });
 });
