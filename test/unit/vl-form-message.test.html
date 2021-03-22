@@ -23,6 +23,12 @@
   </template>
 </test-fixture>
 
+<test-fixture id="vl-form-validation-message-error-met-error-id-attribuut-fixture">
+  <template>
+    <p id="error" is="vl-form-validation-message" error data-vl-error-id="error-id"></p>
+  </template>
+</test-fixture>
+
 <test-fixture id="vl-form-validation-message-success-fixture">
   <template>
     <p id="success" is="vl-form-validation-message" success></p>
@@ -102,7 +108,14 @@
         valideerAttribuut(annotation, 'vl-form__annotation--', attribuut);
       });
     });
-  });
+
+    test('form error krijgt hidden attribuut als het data-vl-error-id attribuut aanwezig is gezet is', () => {
+      let error = fixture('vl-form-validation-message-error-fixture');
+      assert.isFalse(error.hasAttribute('hidden'));
+      error = fixture('vl-form-validation-message-error-met-error-id-attribuut-fixture');
+      assert.isTrue(error.hasAttribute('hidden'));
+    });
+});
 </script>
 </body>
 
