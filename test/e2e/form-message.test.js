@@ -9,6 +9,10 @@ describe('vl-form-message', async () => {
     return vlFormMessagePage.load();
   });
 
+  it('WCAG', async () => {
+    await assert.eventually.isFalse(vlFormMessagePage.hasWcagIssues());
+  });
+
   it('Als gebruiker kan ik een gewoon label zien', async () => {
     const label = await vlFormMessagePage.getFormLabel();
     await assert.eventually.isTrue(label.isDisplayed());
