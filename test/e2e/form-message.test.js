@@ -31,7 +31,10 @@ describe('vl-form-message', async () => {
   });
 
   it('Als gebruiker kan ik een form annotation zien', async () => {
-    const annotation = await vlFormMessagePage.getFormAnnotation();
+    let annotation = await vlFormMessagePage.getFormAnnotation();
+    await assert.eventually.isTrue(annotation.isDisplayed());
+    await assert.eventually.equal(annotation.text(), 'De naam van het evenement moet minstens 12 karakters tellen.');
+    annotation = await vlFormMessagePage.getFormAnnotationSpan();
     await assert.eventually.isTrue(annotation.isDisplayed());
     await assert.eventually.equal(annotation.text(), 'De naam van het evenement moet minstens 12 karakters tellen.');
   });

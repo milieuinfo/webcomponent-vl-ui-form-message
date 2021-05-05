@@ -41,6 +41,12 @@
   </template>
 </test-fixture>
 
+<test-fixture id="vl-form-annotation-span-fixture">
+  <template>
+    <span is="vl-form-annotation-span"></span>
+  </template>
+</test-fixture>
+
 <script>
   suite('vl-form-message', () => {
     const valideerAttribuut = (element, classPrefix, attribuut) => {
@@ -98,14 +104,18 @@
     });
 
     test('form annotation heeft de vl-form__annotation class', () => {
-      const annotation = fixture('vl-form-annotation-fixture');
-      assert.isTrue(annotation.classList.contains('vl-form__annotation'));
+      ['', 'span'].forEach((type) => {
+        const annotation = fixture(`vl-form-annotation${type ? `-${type}` : ``}-fixture`);
+        assert.isTrue(annotation.classList.contains('vl-form__annotation'));
+      });
     });
 
     test('form annotation krijgt de juiste class wanneer het label een attribuut bevat', () => {
-      const annotation = fixture('vl-form-annotation-fixture');
-      ['block'].forEach((attribuut) => {
-        valideerAttribuut(annotation, 'vl-form__annotation--', attribuut);
+      ['', 'span'].forEach((type) => {
+        const annotation = fixture(`vl-form-annotation${type ? `-${type}` : ``}-fixture`);
+        ['block'].forEach((attribuut) => {
+          valideerAttribuut(annotation, 'vl-form__annotation--', attribuut);
+        });
       });
     });
 
@@ -115,7 +125,7 @@
       error = fixture('vl-form-validation-message-error-met-error-id-attribuut-fixture');
       assert.isTrue(error.hasAttribute('hidden'));
     });
-});
+  });
 </script>
 </body>
 

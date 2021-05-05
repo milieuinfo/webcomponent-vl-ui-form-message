@@ -32,6 +32,10 @@ class VlFormMessagePage extends Page {
     return this._getFormAnnotation('#form-annotation');
   }
 
+  async getFormAnnotationSpan() {
+    return this._getFormAnnotation('#form-annotation-span');
+  }
+
   async getFormValidationMessageError() {
     return this._getFormValidationMessage('#form-validation-message-error');
   }
