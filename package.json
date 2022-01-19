@@ -43,7 +43,7 @@
     "vl-ui-core": "^7.1.0"
   },
   "devDependencies": {
-    "@govflanders/vl-ui-form-message": "^3.12.24",
+    "@govflanders/vl-ui-form-message": "^11.0.0",
     "vl-ui-body": "^1.0.8",
     "vl-ui-util": "^5.3.13"
   }
